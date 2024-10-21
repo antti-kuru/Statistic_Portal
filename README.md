@@ -6,4 +6,4 @@ Charts use Frappe.io framework.
 
 The project is done in vanilla JS, HTML and CSS.
 
-The deployed website can be found here: https://antti-kuru.github.io/Statistic_Portal/index.html
+The deployed website can be found here: https://antti-kuru.github.io/Statistic_Portal/
