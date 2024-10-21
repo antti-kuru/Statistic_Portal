@@ -604,9 +604,7 @@ const initializeMap = (munData, regionsData, vehAgeData, apartmentPriceData, sal
     })
 
     // Initialize the base layers
-    let regionsGJSON = L.geoJSON(regionsData, {
-        onEachFeature: getRegionFeature,
-    }).addTo(map)
+    
 
     regVehGJSON = L.geoJSON(regionsData, {
         onEachFeature: (feature, layer) => getRegVehFeature(feature, layer, vehAgeData, salaryData),
@@ -636,7 +634,7 @@ const initializeMap = (munData, regionsData, vehAgeData, apartmentPriceData, sal
 
     L.control.layers(overlayMaps).addTo(map)
 
-    map.fitBounds(regionsGJSON.getBounds())
+    map.fitBounds(regVehGJSON.getBounds())
 }
 
 // Function to update the employment and unemployment layers
