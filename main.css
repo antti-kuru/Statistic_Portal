@@ -1,12 +1,14 @@
 :root {
-    --primary-color: #0016a0;
-    --dark-color: #111;
     --light-color: #f4f4f6;
     --dark-blue: #010f64;
-
     --light-blue: #5c86f6;
 }
 
+body {
+    background-color: var(--dark-blue);
+    color: var(--light-color); 
+    font-family: Verdana, Arial, sans-serif;
+}
 
 #map {
     height: 90vh;
@@ -26,10 +28,7 @@
     opacity: 1;
 }
 
-body {
-    background-color: var(--dark-blue);
-    color: var(--light-color); 
-}
+
 
 #chart, #chart2, #chart3, #newChart {
     background-color: var(--light-color);
@@ -73,6 +72,7 @@ body {
 
 .link {
     color: var(--light-color);
+    font-size: 20px;
 }
 
 @media (max-width: 670px) {

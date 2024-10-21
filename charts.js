@@ -62,8 +62,8 @@ const fetchData = async (munCode, dataCode) => {
     if (!res.ok) {
         return;
     }
-    const data = await res.json();
-    return data;
+    const data = await res.json()
+    return data
 };
 
 
@@ -109,7 +109,7 @@ const fetchPopulationPredictionsData = async (munCode, gender) => {
     if (!res.ok) {
         return
     }
-    const data = await res.json();
+    const data = await res.json()
     return data
 }
 
@@ -166,7 +166,7 @@ const fetchFamilyData = async (munCode, kids) => {
     if (!res.ok) {
         return
     }
-    const data = await res.json();
+    const data = await res.json()
     return data
 } 
 
