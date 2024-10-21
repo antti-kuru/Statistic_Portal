@@ -1,4 +1,4 @@
-** This project is a statistical portal for finnish municipalities **
+This project is a statistical portal for finnish municipalities
 
 This project uses leafleet to utilize GJSON for creating a map. The project uses multiple different data elements from Tilastokeskus (https://statfin.stat.fi/PxWeb/pxweb/en/StatFin/) which are displayed both in a map and in charts.
 
