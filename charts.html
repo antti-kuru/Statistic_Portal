@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="charts.js" defer></script>
+    <script src="https://unpkg.com/frappe-charts@latest"></script>
+    <title>Document</title>
+</head>
+<body>
+        <header id="chart-header">
+        </header>
+        <div class="chart-container">
+            <div id="chart3"></div>
+
+            <div class="drag-hero">
+                <div class="drag-container" id="not-selected">
+                    <h3>Not selected</h3>
+                    <p class="draggable" id="1" draggable="true"> 1 (U18)</p>
+                    <p class="draggable" id="2" draggable="true"> 2 (U18)</p>
+                    <p class="draggable" id="3" draggable="true"> 3 (U18)</p>
+                    <p class="draggable" id="4" draggable="true"> 4+ (U18)</p>
+                    <p class="draggable" id="5" draggable="true"> 0 (U7)</p>
+                    <p class="draggable" id="6" draggable="true"> 1 (U7)</p>
+                    <p class="draggable" id="7" draggable="true"> 2 (U7)</p>
+                    <p class="draggable" id="8" draggable="true"> 3+ (U7)</p>
+                </div>
+                <div class="drag-container" id="selected">
+                    <h3>Selected</h3>
+                    <button id="update-button">Update</button>
+                    <p class="draggable" id="0" draggable="true"> 0 (U18)</p>
+                </div>
+            </div>
+            <button id="export-familyData">Save family chart as SVG</button>
+        </div>
+        <div class="chart-container">
+            <div id="chart"></div>
+            <div id="legend-area"></div>
+            <button id="addBirthData"> Visualize future estimations</button>
+            <button id="export-birthData">Save birth estimation chart as SVG</button>
+        </div>
+        <div class="chart-container">
+            <div id="chart2"></div>
+            <button id="add-data"> Visualize estimation further</button>
+            <button id="export-popData">Save population estimation chart as SVG</button>
+        </div>
+        <div class="container" id="container">
+            <h3>Drag'n'drop new data</h3>
+            <p>Add your JSON file to generate new charts (JSON format has to be Dataset)</p>
+            <input type="file" id="file-input" accept=".json">
+            <button id="dragData">Submit file</button>
+        </div>
+        <footer class="chart-footer">
+            <a href="index.html" class="link"> Go back to maps</a>
+        </footer>
+        
+</body>
+</html>
