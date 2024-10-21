@@ -10,6 +10,7 @@
 
 #map {
     height: 90vh;
+    margin: 15px 5px 0px 5px;
 }
 
 .slidecontainer {
@@ -72,4 +73,10 @@ body {
 
 .link {
     color: var(--light-color);
+}
+
+@media (max-width: 670px) {
+    #map {
+        height: 75vh;
+    }
 }
