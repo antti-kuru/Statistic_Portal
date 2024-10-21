@@ -15,14 +15,15 @@ body {
     margin: 15px 5px 0px 5px;
 }
 
-.slidecontainer {
-    align-items: center;
-}
+
 .slider {
     width: 50%;
     height: 25px;
     outline: none;
     opacity: 0.7;
+}
+#demo {
+    margin-top: 0px;
 }
 .slider:hover {
     opacity: 1;
@@ -78,5 +79,6 @@ body {
 @media (max-width: 670px) {
     #map {
         height: 75vh;
+        margin-right: 15px;
     }
 }
