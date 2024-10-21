@@ -678,12 +678,12 @@ const fetchData = async () => {
     let employmentData = await fetchEmploymentData("11", defaultYear)
     let unEmploymentData = await fetchEmploymentData("12", defaultYear)
     
-    initializeMap(munData, regionsData, vehAgeData, apartmentPriceData, salaryData, employmentData, unEmploymentData);
+    initializeMap(munData, regionsData, vehAgeData, apartmentPriceData, salaryData, employmentData, unEmploymentData)
 
     // Update the map data when the slider changes
     slider.addEventListener("input", async (e) => {
         const selectedYear = e.target.value
-        output.textContent = selectedYear; // Update displayed year
+        output.textContent = selectedYear // Update displayed year
         await updateMapData(munData, selectedYear) // Update map with new data
     })
 }
@@ -840,7 +840,7 @@ const getEmploymentFeature = (feature, layer, emData, unemData) => {
     layer.bindPopup(`
         <ul> 
         
-        <li> name: ${feature.properties.name} </li>
+        <li> Name: ${feature.properties.name} </li>
         <li> Employed: ${emTotal} </li>
         <li> Unemployed: ${unemTotal} </li>
         </ul>
