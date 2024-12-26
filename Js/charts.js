@@ -88,11 +88,11 @@ const fetchPopulationPredictionsData = async (munCode, gender) => {
             }
           },
           {
-            "code": "Tiedot",
+            "code": "Ikä",
             "selection": {
               "filter": "item",
               "values": [
-                "vaesto_e21"
+                "SSS"
               ]
             }
           }
@@ -101,7 +101,7 @@ const fetchPopulationPredictionsData = async (munCode, gender) => {
           "format": "json-stat2"
         }
       }
-      const res = await fetch("https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/vaenn/statfin_vaenn_pxt_139g.px", {
+      const res = await fetch("https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/vaenn/statfin_vaenn_pxt_14wx.px", {
         method: "POST",
         headers: {"content-type": "application/json"},
         body: JSON.stringify(JsonQuery)
