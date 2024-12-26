@@ -99,69 +99,40 @@ const fetchVehicleData = async () => {
 
 const fetchSalaryData = async () => {
     const salaryQuery = {
-        "query": [
-          {
-            "code": "Maakunta",
-            "selection": {
-              "filter": "item",
-              "values": [
-                "SSS",
-                "MK01",
-                "MK02",
-                "MK04",
-                "MK05",
-                "MK06",
-                "MK07",
-                "MK08",
-                "MK09",
-                "MK10",
-                "MK11",
-                "MK12",
-                "MK13",
-                "MK14",
-                "MK15",
-                "MK16",
-                "MK17",
-                "MK18",
-                "MK19",
-                "MK21",
-                "X"
-              ]
-            }
-          },
-          {
-            "code": "Työnantajasektori",
-            "selection": {
-              "filter": "item",
-              "values": [
-                "SSS"
-              ]
-            }
-          },
-          {
-            "code": "Sukupuoli",
-            "selection": {
-              "filter": "item",
-              "values": [
-                "SSS"
-              ]
-            }
-          },
-          {
-            "code": "Tiedot",
-            "selection": {
-              "filter": "item",
-              "values": [
-                "pra_kkpalkka_ka"
-              ]
-            }
+      "query": [
+        {
+          "code": "Sektoriluokitus 2023",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "S0"
+            ]
           }
-        ],
-        "response": {
-          "format": "json-stat2"
+        },
+        {
+          "code": "Sukupuoli",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "SSS"
+            ]
+          }
+        },
+        {
+          "code": "Tiedot",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "pra_kkpalkka_ka"
+            ]
+          }
         }
+      ],
+      "response": {
+        "format": "json-stat2"
       }
-      const res = await fetch ("https://statfin.stat.fi:443/PxWeb/api/v1/fi/StatFin/pra/statfin_pra_pxt_14kj.px", {
+    }
+      const res = await fetch ("https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/pra/statfin_pra_pxt_14xw.px", {
         method: "POST",
         headers: {"content-type": "application/json"},
         body: JSON.stringify(salaryQuery)
@@ -671,6 +642,8 @@ const fetchData = async () => {
     const apartmentPriceData = await fetchApartmentPriceData()
     const salaryData = await fetchSalaryData()
 
+    console.log(salaryData)
+
     /* The slider is used to display employment data from selected year in the slider */
     // Initialize the map with default year (which is set to 2022)
     const defaultYear = slider.value
@@ -692,12 +665,12 @@ const fetchData = async () => {
 const getRegVehFeature = (feature, layer, vehAgeData, salaryData) => {
     //console.log(feature.properties.nimi)
     let regID = "MK" + feature.properties.maakunta
-
     const index = vehAgeData.dimension.Maakunta.category.index[regID]
-    
+    const salaryIndex  = salaryData.dimension.Maakunta.category.index[regID]
+  
     vehAge = vehAgeData.value[index]
-    avgSalary = salaryData.value[index]
-    //console.log(avgSalary)
+    avgSalary = salaryData.value[salaryIndex]
+
 
 
     layer.bindPopup(`
